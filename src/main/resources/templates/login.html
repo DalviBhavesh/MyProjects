@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<!-- Section: Design Block -->
+	<section class="banner">
+		 <div class="container">
+		 	<div class="row">
+				 <div class="col-md-4 offset-md-4">
+					 
+					<div class="my-card">
+						
+						 <!--inserting image-->
+						 <div class="container text-center mb-1">
+							 <img style="height: 12vh;" th:src="@{/img/login_4116667.png}" />
+							 
+						 </div>
+						 
+						 <!--Error Handling-->
+						 <div class="alert alert-danger text-center" th:if="${param.error}">
+							Invalid username and password.</div>
+							
+						<div class="alert alert-success text-center" th:if="${param.logout}">
+							You have been logged out sucessfully.</div>
+						
+						<!-- Main login form--> 
+					<form th:action="@{/login}" method="post">
+							  <!-- email field -->
+							  <div class="mb-3">
+								  <div class="container">
+									  <label class="form-label">User ID</label>
+								  </div>
+							    
+							    
+							    <input type="email"
+							    		name="username" 
+							    		class="form-control"
+							    		placeholder="abc@gmail.com"
+							    		required>
+			  		
+							  </div>
+							  
+							  <!-- password field -->
+							  <div class="mb-3">
+									  <div class="container">
+										  <label class="form-label">password</label>
+									  </div>
+							    
+								    <input type="password" 
+								    		name="password"
+								    		class="form-control"
+								    		placeholder="enter your password"
+								    		required> 
+							  	</div>
+							    		
+							  
+							  
+							  
+							  
+							  <div class="container text-center mt-3 ">
+								  <button type="submit" 
+								  		  class="btn button-color btn-lg">Login</button>
+								  
+							  </div>
+							  
+							  <hr />
+							  
+							  <div class="container text-center">
+								 <p class="text-center">Not Registered ?<a href="signup" class="link-primary link-underline-opacity-0"><b> Click here to Sign Up </b></a></p> 
+							  </div>
+							  
+							  
+							</form> 
+								 
+						</div>		 
+					 </div> 
+				 </div>
+			 </div>
+		</div>
+			
+		</section>
+		<!-- Section: Design Block -->
+</body>
+</html>

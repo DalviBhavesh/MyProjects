@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="banner2">
+		
+		<div class="container ">
+		 	<div class="row">
+				 <div class="col-md-6 offset-md-3">
+					 
+					<div class="my-card mb-4">
+						
+						<!-- inserting close button -->
+						<div class="container text-end">
+							<a th:href="@{'/user/viewAllContacts/'+${currentPgno}}">
+								<button type="submit" class="btn bg-primary" style="color: darkgrey; border: 2px solid darkgrey;">
+										  		<i class="fa-solid fa-xmark"></i>
+								</button>
+							</a> 
+						</div>
+						
+						 <!--inserting image-->
+						 <div class="container text-center mb-4">
+							 <img id="singleCardImg" class="rounded-circle img-thumbnail object-fit-contain"  th:src="@{'/img/'+${contact.image}}" />
+							 <h1 class="display-5">Update Contact</h1>
+							 
+						 </div>
+						 
+						 <!-- Display Error Message using session -->
+						 <div th:if="${session.message}" class="container text-center">
+							 <div class="alert alert-dismissible fade show" 
+							 	  th:classappend="${session.message.type}" 
+							 	  role="alert">
+								  <span th:text="${session.message.content}"></span>
+								  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							 </div>
+						 </div>
+						 
+						 <th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+						 
+						
+						<!-- Main login form--> 
+					<form th:action="@{'/user/processUpdateContact/'+${contact.cId}}"
+								  th:object="${contact}"
+								  enctype="multipart/form-data"
+								  method="post">
+							 
+							    
+							   <div class="input-group mb-3">
+									  <span class="input-group-text" ><i class="fa-solid fa-user"></i></span>
+									  <input name="name" 
+									  		type="text" 
+									  		class="form-control"
+									  		th:classappend="${#fields.hasErrors('name')? 'is-invalid' : ''}" 
+									  		placeholder="Enter Full Name here"
+									  		th:value="${contact.name}" >
+									  		
+									  <div  class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}">  
+							   			</div>
+							   
+							  </div>
+							  
+							  
+							  <div class="input-group mb-3">
+									  <span class="input-group-text" ><i class="fa-solid fa-hashtag"></i></span>
+									  <input name="nickName" 
+									  		type="text" 
+									  		class="form-control"
+									  		th:classappend="${#fields.hasErrors('nickName')? 'is-invalid':''}" 
+									  		placeholder="Enter Nickname here" 
+									  		th:value="${contact.nickName}">
+									  		
+									  <div  class="invalid-feedback" th:each="e : ${#fields.errors('nickName')}" th:text="${e}">							  		
+									</div>
+									
+							 </div>
+									
+							
+								
+									
+							  <div class="input-group mb-3">
+									  <span class="input-group-text" ><i class="fa-solid fa-phone"></i></span>
+									  <input name="phone" 
+									  		type="tel" 
+									  		pattern="[0-9]{10}"
+									  		class="form-control" 
+									  		th:classappend="${#fields.hasErrors('phone') ? 'is-invalid':''}"
+									  		placeholder="Enter Phone number here" 
+									  		th:value="${contact.phone}">
+									  		
+									  <div class="invalid-feedback" th:each="e : ${#fields.errors('phone')}" th:text="${e}"></div>
+									  		
+									</div>
+									
+							  <div class="input-group mb-3">
+									  <span class="input-group-text" ><i class="fa-solid fa-envelope"></i></span>
+									  <input name="email" 
+									  		type="email" 
+									  		class="form-control" 
+									  		th:classappend="${#fields.hasErrors('email')?'is-invalid' : ''}"
+									  		placeholder="Enter contacts Email here" 
+									  		th:value="${contact.email}">
+									  		
+									  		<div class="invalid-feedback" th:each="e : ${#fields.errors('email')}" th:text="${e}"></div>
+									</div>
+									
+							  <div class="input-group mb-3">
+									  <span class="input-group-text" ><i class="fa-solid fa-briefcase"></i></span>
+									  <input name="work" 
+									  		type="text" 
+									  		class="form-control"
+											th:classappend="${#fields.hasErrors('work')?'is-invalid':''}" 
+									  		placeholder="Enter Work here"
+									  		th:value="${contact.work}">
+									  		
+									  		<div class="invalid-feedback" th:each="e:${#fields.errors('work')}" th:text="${e}"></div>
+									</div>
+									
+								<p class="lead">
+									Uplode a new photo for this contact below:
+								</p>	
+							  <div class="input-group mb-3">
+								  <span class="input-group-text" for="inputGroupFile01"><i class="fa-solid fa-image"></i></span>
+								  <input name="profileImage"
+								  		id="inputGroupFile01" 
+								  		 type="file" 
+								  		 class="form-control"
+								  		 placeholder="Enter new profile photo">
+								  
+								</div>
+									
+							  <div class="input-group mb-3">
+									  
+									  <textarea rows="5"
+									  			name="description" 
+									  			class="form-control" 
+									  			th:classappend="${#fields.hasErrors('description')? 'is-invalid' : ''}"
+									 
+									  			placeholder="Enter something about this contact" 
+									  			th:text="${contact.description}"></textarea>
+									  
+									  <div class="invalid-feedback" th:each="e : ${#fields.errors('description')}" th:text="${e}"></div>
+									  
+									</div>
+									
+							
+							    		
+							  
+							  
+							  
+							  
+							  <div class="container text-center mt-3 ">
+								  <button type="submit" 
+								  		  class="btn btn-primary ">Update</button>
+								  
+								  	  
+								  
+								  
+							  </div>
+							  
+							  
+							  
+							  
+							</form> 
+								
+								
+						</div>		 
+					 </div> 
+				 </div>
+			 </div>
+		</div>
+		
+	</section>
+</body>
+</html>

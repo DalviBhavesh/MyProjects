@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="banner2" style="display: flex;flex-direction: row;flex-wrap: wrap;">
+		
+	
+		
+	<div class=" pb-3 ps-4" >		
+		<a onclick="history.back()" class="link link-underline-opacity-0"><button class="btn btn-lg bg-primary mt-1"><i class="fa-solid fa-arrow-left"></i></button></a>
+	</div>
+	
+		
+
+	<div class="container mt-0" id="container">
+      <div class="cover-photo" id="cover-photo">
+        <img th:src="@{'/img/'+${user.imageUrl}}"  class="profile" style="object-fit: contain;">
+        
+      </div>
+      
+		  
+	  <div class="container mt-5">
+		  <p class="badge text-bg-warning mt-2" th:text="${'SCM'+user.id}"></p>
+		  <div>
+			 <p class="badge lead text-bg-success" >
+				 <i class="fa-solid fa-cloud-arrow-up"></i><span class="ms-2">Total <span class="ms-1" th:text="${TotalContacts}"></span> contacts uplaoded</span>
+			 </p>
+		 </div>
+		  <p class="display-6" th:text="${#strings.capitalize(user.name)}">Beni Smith</p>
+	  </div>
+      
+      <div class="container">
+		  
+		  
+		  
+		  <div>
+			  <p  class="lead">
+				  <i class="fa-solid fa-envelope"></i><span class="ms-2" th:text="${user.email}">User Interface Designer and<br>front-end developer</span>
+			  </p> 
+		  </div>
+		  
+		 <div>
+			 <p class="lead" >
+				 <i class="fa-solid fa-pen-to-square"></i><span class="ms-2" th:text="${user.about}"></span>
+			 </p>
+		 </div>
+      		
+      
+	  </div>
+      
+      <form th:action="@{/user/updateUser}" method="post">
+		  <button type="submit" class="btn button-color btn-lg mt-3" >Update Profile</button>
+	  </form>
+      
+    </div>
+
+	</section>
+	
+</body>
+</html>

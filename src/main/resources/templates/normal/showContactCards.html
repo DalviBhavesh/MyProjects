@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section  th:classappend="${(#lists.size(contactList)>=3)? 'banner2':'banner'}" class="">
+		
+		<div class="container text-center">
+			
+			    <div class="container">
+			        
+			        <!-- end row -->
+			        <div class="row">
+			            <div class="col-lg-4" th:each="e:${contactList}">
+							
+								  <div class="text-center card-box " style="border-radius: 30px;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)); color: white; border:4px solid White ;">
+					                    <div class="member-card pt-2 pb-2 ">
+					                        <div class="thumb-lg member-thumb mx-auto"><img th:src="@{'/img/'+${e.image}}" id="cardImg" class="rounded-circle img-thumbnail object-fit-contain" alt="profile-image"></div>
+					                        <div class="mt-2 ">
+												<p class="badge text-bg-warning" th:text="${'SCM'+e.cId}"></p>
+												<h2  th:text="${#strings.toUpperCase(e.name)}"></h2>
+					                        </div>
+					                
+					                        
+					                        <div>
+												<a th:href="@{'/user/card/'+${e.cId}}" class="link link-underline-opacity-0"><button class="btn btn-lg bg-primary mt-1">View Profile</button></a>
+											</div>
+					                    </div>
+					                </div>
+							
+			              
+			            </div>
+			            
+			        </div>
+			        <!-- end row -->
+			        
+			        <!-- end row -->
+			    </div>
+			   
+			
+
+			
+		</div>
+		
+		
+	</section>
+</body>
+</html>

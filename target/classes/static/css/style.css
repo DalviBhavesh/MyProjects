@@ -1,0 +1,303 @@
+body{
+	display:inline;
+	background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(../img/0bvxo169pukb1.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+
+
+.bg-primary{
+	background-color: rgba(0,0,0,0.0) !important;
+	color: white;
+	border: 2px solid white;
+}
+.bg-primary:hover{
+	background-color: white !important;
+	color: #643D7D;
+	border: 2px solid #643D7D;
+}
+
+.button-color{
+	background-color: #816AE2;	
+	color: white;
+}
+.button-color:hover{
+	background-color: #643D7D;	
+	color: white;
+}
+
+.banner{
+	margin-top: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 92.5vh;
+	color: white;
+	
+}
+
+.banner2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	display: flex;
+	
+	width: 100%;
+	height: 100%;
+	color: rgb(0, 0, 0);
+	
+}
+
+.my-card{
+	background-color: rgba(0, 0, 0, 0.4);
+	color: white;
+	padding: 20px;
+	border-radius: 20px;
+	border: 2px solid rgba(255, 255, 255, 0.4);
+	
+}
+
+.content{
+	margin-left: 18%;
+}
+
+.sidebar{
+	display: block;
+	position: fixed;
+	background-color: #F0F1F3;
+	width: 18%;
+	height: 100%;
+	z-index: 99;
+}
+
+.sidebar a{
+	display: block;
+	text-align: left;
+	margin: 10px;
+	padding: 10px ;
+	color:black;
+	text-decoration: none;
+	border-radius: 10px;
+	
+	
+}
+
+.sidebar a:hover{
+	background-color: #E5E5E5;
+	
+}
+
+hr{
+	color: black;
+}
+
+.sidebar .exit{
+	
+	position: absolute;
+	top: 0px;
+	right: 12px;
+	
+	
+	font-size: 30px;
+	color: black;
+	cursor: pointer;
+}
+
+.sidebar .exit:hover{
+	color:darkgray;
+}
+
+#bread{
+	display: inline;
+	color: rgb(0, 0, 0);
+	padding: 7px;
+	font-size: 20px;
+	align-items: center;
+	border-radius: 5px;
+}
+#bread:hover{
+	background-color: #E5E5E5;
+}
+
+
+
+.profileImage{
+	object-fit: contain;
+	
+	height: 40px;
+	width: 40px;
+	border-radius: 20px;	
+}
+
+
+
+
+
+
+
+
+
+
+#cardImg{
+	object-fit: cover;
+	
+	height: 85px;
+	width: 85px;
+	border-radius: 50px;
+}
+
+.card-box {
+    padding: 20px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+
+.social-links li a {
+    border-radius: 50%;
+    color: rgba(121, 121, 121, .8);
+    display: inline-block;
+    height: 30px;
+    line-height: 27px;
+    border: 2px solid rgba(121, 121, 121, .5);
+    text-align: center;
+    width: 30px
+}
+
+.social-links li a:hover {
+    color: #797979;
+    border: 2px solid #797979
+}
+.thumb-lg {
+    height: 88px;
+    width: 88px;
+}
+.img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+}
+.text-pink {
+    color: #ff679b!important;
+}
+.btn-rounded {
+    border-radius: 2em;
+}
+.text-muted {
+    color: #98a6ad!important;
+}
+h4 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+
+
+#singleCardImg{
+	object-fit: contain;
+	
+	height: 85px;
+	width: 85px;
+	border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#container{
+  user-select: none;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin:100px auto;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  height: 80%;
+  width: 550px;
+  text-align: center;
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,.75);
+}
+#cover-photo{
+  background: linear-gradient(to right, #42275a, #734b6d);
+  object-position: center;
+  object-fit: cover;
+  height: 160px;
+  width: 100%;
+ 
+}
+.profile{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 93px 0 0 0px;
+  border: 1px solid white;
+  padding: 7px;
+  background: white;
+}
+.profile-name{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 27px 0 0 120px;
+}
+.about{
+  margin-top: 35px;
+  line-height: 21px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px){
+	.sidebar{
+		 	display:none;
+			position: fixed;
+			background-color:#F8F9FA;
+			width: 80%;
+			height: 100%;
+			}
+			
+	.content{
+		margin-left: 0px;
+	}
+	
+	.nav-item1{
+		display: none;
+	}
+	
+	.nav-item{
+		margin-top: 10px;
+	}
+}
+
+
+

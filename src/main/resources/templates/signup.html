@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="banner">
+		<div class="container">
+		 	<div class="row">
+				 <div class="col-sm-6 offset-sm-3">
+					 
+					 <div class="my-card">
+						 
+						  
+						 <!-- using Session to get error message from controller -->
+						 <div th:if="${session.message}" 
+						 	  th:classappend="${session.message.type}" 
+						 	  class="alert text-center" 
+						 	  role="alert">
+						 	  
+						 <span th:text="${session.message.content}"></span>
+						</div>
+						 
+						<!-- removing message from session after showing it to the user--> 
+						<th:block th:text="${@sessionHelper.removeMessageFromSession()}"></th:block>
+						 
+						 
+						 
+						 <div class="container text-center">
+							 <img style="height: 12vh;" th:src="@{/img/signup-new.png}" alt="" />
+						 </div>
+						 
+						 
+						 
+						 
+						 <form th:action="@{/doSignup}" method="post" th:object="${user}"> 
+							 <!-- name field -->
+							 <div class="mb-3">
+								 <div class="container">
+									 <label for="exampleInputEmail1" class="form-label">Name</label>
+								 </div>
+							    
+							    
+							    <input type="text" 
+							    		class="form-control " 
+							    		th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}"
+							    		id="name-field" 
+							    		aria-describedby="emailHelp"
+							    		placeholder="abc"
+							    		th:value="${user.name}"
+							    		name="name"
+							    		required>
+							    		
+							    <div  class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}">
+							      
+							    </div>
+							    		
+							  </div>
+							  
+							  <!-- email field -->
+							  <div class="mb-3">
+								  <div class="container">
+									  <label for="exampleInputEmail1" class="form-label">Email</label>
+								  </div>
+							    
+							    
+							    <input type="email" 
+							    		class="form-control"
+							    		th:classappend="${#fields.hasErrors('email')? 'is-invalid':''}" 
+							    		id="email-field" 
+							    		aria-describedby="emailHelp"
+							    		placeholder="abc@gmail.com"
+							    		th:value="${user.email}"
+							    		name="email"
+							    		required>
+							    		
+							    <div  class="invalid-feedback" th:each="e : ${#fields.errors('email')}" th:text="${e}">
+							      
+							    </div>
+							    		
+							  </div>
+							  
+							  <!-- password field -->
+							  <div class="mb-3">
+								  <div class="container">
+									  <label for="exampleInputEmail1" class="form-label">password</label>
+								  </div>
+							    
+							    
+							    <input type="password" 
+							    		class="form-control"
+							    		th:classappend="${#fields.hasErrors('password') ? 'is-invalid' : ''} " 
+							    		id="password-field" 
+							    		aria-describedby="emailHelp"
+							    		placeholder="Use strong password"
+							    		name="password"
+							    		required>
+							    <div class="invalid-feedback" th:each="e : ${#fields.errors('password')}" th:text="${e}">
+								  
+							  	</div>
+							    		
+							  </div>
+							  
+							  
+							  
+							  <!-- Text Area -->
+							  <div>
+								  <textarea class="form-control" 
+								  			th:classappend="${#fields.hasErrors('about')?'is-invalid':''}"
+								  			placeholder="Enter something about yourself....."  
+								  			rows="3"
+								  			th:text="${user.about}"
+								  			name="about"></textarea>
+								  			
+								  <div  class="invalid-feedback" th:each="e : ${#fields.errors('about')}" th:text="${e}">
+							      
+							      </div>
+							    	
+							  </div>
+							  
+							  <div class="form-group form-check m-2">
+								  <input type="checkbox"
+								  		 name="agreement"
+								  		 class="form-check-input"
+								  		 id="agreement" />
+								  	<lable>Accept terms and conditions</lable>
+							  </div>
+							  
+							  <div class="container text-center mt-3 ">
+								  <button type="submit" class="btn button-color ">Register</button>
+								  
+							  </div>
+							  
+							  
+						 </form>
+						 
+					 </div>
+					 
+				 </div>
+			 </div>
+		</div>
+			
+	</section>
+</body>
+</html>

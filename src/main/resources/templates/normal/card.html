@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section class="banner2">
+		
+		
+		<div class="container text-center">
+			
+			<div th:if="${contact}" class="container text-center">
+			
+			    <div class="container">
+			        
+			        <!-- end row -->
+			        
+			            
+							 <div class="container pb-3 ps-4 text-start">		
+								<!--<a href="/user/showContactCards" class="link link-underline-opacity-0"><button class="btn btn-lg bg-primary mt-1"><i class="fa-solid fa-arrow-left"></i></button></a>-->
+								<button class="btn btn-lg bg-primary mt-1" onclick="history.back()"><i class="fa-solid fa-arrow-left"></i></button>
+							
+							</div>
+								  <div class="text-center card-box " style="border-radius: 30px;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)); color: white; border:4px solid White ;">
+					                    <div class="member-card pt-2 pb-2 ">
+					                        <div class="thumb-lg member-thumb mx-auto"><img th:src="@{'/img/'+${contact.image}}" id="singleCardImg" class="rounded-circle img-thumbnail object-fit-contain" alt="profile-image"></div>
+					                        <div class="mt-2 ">
+												<p class="badge text-bg-warning" th:text="${'SCM'+contact.cId}"></p>
+												<h2  th:text="${#strings.toUpperCase(contact.name)}"></h2>
+												<br />
+												
+												<div class="row">
+													<div class="col-sm-4 mb-3 mb-sm-3">
+												    <div class="card">
+												      <div class="card-body">
+														  <h1><i class="fa-solid fa-ghost"></i></h1>
+												        <h5 class="badge text-bg-dark card-title">Nick Name</h5>
+												        <div class="button-color p-1">
+															<h1 class="card-text" >#<span th:text="${contact.nickName}"></span></h2>
+												        
+														</div>
+												        
+												      </div>
+												    </div>
+												  </div>
+												  <div class="col-sm-8 mb-3 mb-sm-3">
+												    <div class="card">
+												      <div class="card-body">
+														  <h1><i class="fa-solid fa-briefcase"></i></h1>
+												        <h5 class="badge text-bg-dark card-title">Work</h5>
+												        <div class="button-color p-1">
+															<h1 class="card-text" th:text="${#strings.capitalize(contact.work)}">With supporting text below as a natural lead-in to additional content.</h1>
+														</div>
+												        
+												        
+												      </div>
+												    </div>
+												  </div>
+												  
+												</div>
+												
+												<div class="row">
+												  <div class="col-sm-8 mb-3 mb-sm-3">
+												    <div class="card">
+												      <div class="card-body">
+														  <h1><i class="fa-solid fa-envelope"></i></h1>
+												        <h5 class="badge text-bg-dark card-title">Email Id</h5>
+												        <div class="button-color p-1">
+															<h2 class="card-text" th:text="${contact.email}">With supporting text below as a natural lead-in to additional content.</h2>
+												        
+														</div>
+												      </div>
+												    </div>
+												  </div>
+												  <div class="col-sm-4 mb-3 mb-sm-3">
+												    <div class="card">
+												      <div class="card-body">
+														 <h1><i class="fa-solid fa-phone"></i></h1> 
+												        <h5 class="badge text-bg-dark card-title">Phone no</h5>
+												        	<div class="button-color p-1">
+																<h2 class="card-text" th:text="${contact.phone}">With supporting text below as a natural lead-in to additional content.</h2>
+												       		   
+															   </div>
+												      </div>
+												    </div>
+												  </div>
+												</div>
+												
+												
+													<div class="row">
+														
+														<div class="col-sm-12 mb-3 mb-sm-3">
+														    <div class="card">
+														      <div class="card-body">
+																<h1><i class="fa-solid fa-briefcase"></i></h1> 
+														        <h5 class="badge text-bg-dark card-title">Description</h5>
+														        <div class="button-color p-1">
+																	<h2 class="card-text" th:text="${contact.description}">With supporting text below as a natural lead-in to additional content.</h2>
+														        
+																</div>
+														      </div>
+														    </div>
+														  </div>
+														
+													<!--</div>
+													
+													
+															<button class="btn btn-warning btn-block btn-lg">Update</button>
+															<button class="btn btn-danger btn-block btn-lg">Delete</button>
+													
+														</div>-->
+					                        </div>
+					                
+					                        
+					                       
+					                    </div>
+					                </div>
+			        <!-- end row -->
+			        
+			        
+			        <!-- end row -->
+			    </div>
+			   
+			<div th:unless="${contact}" class="alert alert-danger">
+				<div class="containet text-center">
+					<h1 class="text-center">Dont try to modify the url, your ID will be blocked !</h1>
+				</div>
+			</div>
+
+			
+		</div>
+			
+			
+			
+					
+		</div>
+		
+		
+		
+		
+		
+		
+	</section>
+</body>
+</html>
