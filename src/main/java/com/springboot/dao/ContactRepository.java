@@ -2,7 +2,6 @@ package com.springboot.dao;
 
 import java.util.List;
 
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -33,6 +32,10 @@ public interface ContactRepository extends JpaRepository<Contact, Integer> {
 	@Transactional
 	@Query("delete from Contact c where c.cId =:id")
 	public void deleteContactById(@Param("id")int id);
+	
+	//search method
+	@Query("SELECT c FROM Contact c WHERE c.user.id =:userId and c.name LIKE %:name%")
+	public List<Contact> findContactsByKeywordsAndUser(@Param("name")String name, @Param("userId")int userId);
 	
 	
 }

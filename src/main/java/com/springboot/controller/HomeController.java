@@ -28,8 +28,9 @@ public class HomeController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	
-	private EmailService emailService = new EmailService();
+	@Autowired
+	private EmailService emailService;
+	//private EmailService emailService = new EmailService();
 	
 	/*//test controller for persistence logic testing
 	@GetMapping("/test")

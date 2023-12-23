@@ -265,6 +265,72 @@ h4 {
 
 
 
+.search-container{
+	display: flex;
+	position: relative;
+	width: 45vmax;
+	height: 45px;
+	background-color: white;
+	font-size:large;
+	border-radius: 10px;
+	
+			
+}
+
+.search-icon{
+	position: absolute;
+	width: 40px;
+	align-self: center;
+	text-align: center;
+	
+	
+}
+
+
+.search-container input{
+	width: 45vmax;
+	border: none;
+	border-radius: 10px;
+	padding-left: 40px;
+	padding-right: 20px;
+	border: 2px solid #dee2e6;
+	}
+	
+.search-result{
+	background-color:white;
+	position: absolute;
+	display: none;
+	width: 45vmax;
+	margin-top:50px;
+	border-radius: 10px;
+	padding:10px 
+	}
+
+.result{
+	display: block;
+	color: black;
+	padding: 10px;
+	margin: 0px;
+	border-radius: 10px;
+	
+
+}
+
+.result img{
+	margin-right: 5px;
+}
+
+.result:hover{
+	background-color:#dee2e6;
+	
+	
+}
+
+.active{	
+	background-color: lightgrey;
+}
+
+
 
 
 

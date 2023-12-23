@@ -1,5 +1,7 @@
 package com.springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -43,6 +45,7 @@ public class Contact {
 	private String description;
 	
 	@ManyToOne
+	@JsonIgnore //to ignore the serialization of user to stop circular dependency
 	private User user;
 	
 	

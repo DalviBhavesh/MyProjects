@@ -9,6 +9,26 @@
 		
 		<div class="container text-center">
 			
+			<!--Search bar-->
+			<div class="container text-center" style=" display:flex; justify-content: center; align-items: center;">
+				
+					<div class=" search-container mb-4">
+						<div class="search-icon">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</div>
+						
+					
+						<input class="search-field" onkeyup="search()" id="search-input" type="text" placeholder="Search here........."/>
+						
+						<div class="search-result">
+							<!--result injecting through jQuery (JS)-->
+						</div>
+					</div>
+					
+					
+			</div>
+			
+			
 			    <div class="container">
 			        
 			        <!-- end row -->
@@ -43,6 +63,13 @@
 
 			
 		</div>
+		
+		<script>
+		$(document).ready(()=>{
+			$(".item").removeClass("active");
+			$("#viewContact-link").addClass("active");
+		});
+		</script>
 		
 		
 	</section>
